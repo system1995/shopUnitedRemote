@@ -1,21 +1,15 @@
-# vueauthclient
+# vue-cli [![Build Status](https://circleci.com/gh/vuejs/vue-cli/tree/dev.svg?style=shield)](https://circleci.com/gh/vuejs/vue-cli/tree/dev) [![Windows Build status](https://ci.appveyor.com/api/projects/status/rkpafdpdwie9lqx0/branch/dev?svg=true)](https://ci.appveyor.com/project/yyx990803/vue-cli/branch/dev)
 
-> A Vue.js project
+> Vue CLI is the Standard Tooling for Vue.js Development.
 
-## Build Setup
+## Documentation
 
-``` bash
-# install dependencies
-npm install
+Docs are available at https://cli.vuejs.org/ - we are still working on refining it and contributions are welcome!
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Contributing
 
-# build for production with minification
-npm run build
+Please see [contributing guide](https://github.com/vuejs/vue-cli/blob/dev/.github/CONTRIBUTING.md).
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+## License
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+[MIT](https://github.com/vuejs/vue-cli/blob/dev/LICENSE)
