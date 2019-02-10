@@ -10,9 +10,10 @@
       <div class="row">
         <div class="col-md-4" v-for="LikedShop in Likedshops" :key="LikedShop.id">
           <div class="thumbnail">
-            <img v-bind:src="'http://localhost:1337/'+shop.path " style="width:100%">
+            <img v-bind:src="'http://localhost:1337/'+Likedshops.path " style="width:100%">
             <div class="caption">
               <p>{{ LikedShop.name }} - {{ LikedShop.distance }} KM</p>
+              <button v-on:click="removeShop(Likedshops.id)" >Remove</button>
             </div>
           </div>
         </div>
@@ -39,8 +40,19 @@ export default {
           this.Likedshops = response.data
         })
         .catch((errors) => {
-          console.log("Cannot list shop" + errors)
+          console.log("Cannot list liked shops" + errors)
         })
+    },
+    removeShop: function (shopId) {
+      let accessToken = localStorage.getItem("user-token")
+      axios.post("http://localhost:1337/shop/preferredshops/remove", {"removedShop": shopId}, {headers: {"Authorization": "Bearer " + accessToken}})
+        .then((response) => {
+          this.$forceUpdate()
+        })
+        .catch((errors) => {
+          console.log("Cannot remove shop" + errors)
+        })
+      this.getShop()
     }
   },
   mounted () {
