@@ -13,6 +13,6 @@ module.exports = {
     },
     distance: {
       type: 'number',
-    }
+    },
   }
 };

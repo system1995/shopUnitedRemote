@@ -31,13 +31,11 @@ module.exports = {
     },
     likedShops: {
       collection: 'shop',
-    }
+    },
   },
   customToJSON: function () {
     return _.omit(this, ['password']);
   },
-
-  
   validationMessages: { //hand for i18n & l10n
     names: {
       required: 'Name is required'
@@ -58,6 +56,15 @@ module.exports = {
       if (err) return cb(err);
       values.password = hash;
       cb();
+    });
+  },
+  afterCreate: function (user, cb) {
+    Shop.find(user.unLikedShops, function (err, shops) {
+      if (err) return cb(err);
+      async.each(menues, function (menu, next) {
+        menu.quantity++;
+        menu.save(next);
+      }, cb);
     });
   }
 };

@@ -36,6 +36,6 @@ module.exports.datastores = {
     adapter: 'sails-mongo',
     host: 'localhost',
     port: 27017,
-    database: 'shop'
+    database: 'shopDB'
   },
 };

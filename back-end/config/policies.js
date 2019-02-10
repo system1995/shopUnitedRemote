@@ -24,6 +24,7 @@ module.exports.policies = {
     preferredShops: 'isAuth',
     nearbyShops: 'isAuth',
     likeShop: 'isAuth',
+    removePreferredShop : 'isAuth'
   }
 
 };

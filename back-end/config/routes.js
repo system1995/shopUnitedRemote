@@ -17,5 +17,6 @@ module.exports.routes = {
   'get /shop': 'ShopController.nearbyShops',
   'get /shop/preferredshops': 'ShopController.preferredShops',
   'post /shop/like': 'ShopController.likeShop',
+  'post /shop/preferredshops/remove': 'ShopController.removePreferredShop',
 
 };
